@@ -2,6 +2,13 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
+const admin = require("firebase-admin");
+
+admin.initializeApp({
+  credential: admin.credential.applicationDefault(),
+  databaseURL: "https://omdb-exercise.firebaseio.com"
+});
+
 app.set("view engine", "ejs");
 
 app.use(express.static("public"));
