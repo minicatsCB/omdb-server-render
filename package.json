@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/minicatsCB/omdb-server-render/issues"
   },
-  "homepage": "https://github.com/minicatsCB/omdb-server-render#readme"
+  "homepage": "https://github.com/minicatsCB/omdb-server-render#readme",
+  "dependencies": {
+    "express": "4.16.4"
+  }
 }
