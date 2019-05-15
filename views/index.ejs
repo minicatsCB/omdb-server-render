@@ -8,10 +8,7 @@
         <%- include includes/search-bar %>
         <div id="movies">
             <% movies.forEach(function(movie){ %>
-            <%- include("includes/movie", {
-                    movieKey: movie.key,
-                    movieValue: movie.val()
-                }); %>
+            <%- include("includes/movie", {movie: movie}); %>
             <% }); %>
         </div>
     </div>

@@ -16,7 +16,15 @@ app.use(express.static("public"));
 
 app.get("/", (req, res) => {
     controller.getAllMovies().then(allMovies => {
-        res.render("index", { movies: allMovies});
+        let parsedMovies = allMovies.map(movie => {
+            return {
+                key: movie.key,
+                value: movie.val()
+            };
+        });
+        res.render("index", { movies: parsedMovies});
+    });
+});
     });
 });
 
