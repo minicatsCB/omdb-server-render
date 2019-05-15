@@ -25,6 +25,10 @@ app.get("/", (req, res) => {
         res.render("index", { movies: parsedMovies});
     });
 });
+
+app.get("/create", (req, res) => {
+    controller.saveMovie(req.query.title).then(movie => {
+        res.render("index", { movies: [movie] });
     });
 });
 
