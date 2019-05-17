@@ -6,10 +6,9 @@
 <body>
     <div class="container">
         <%- include includes/search-bar %>
-        <div id="movies">
-            <% movies.forEach(function(movie){ %>
+        <div id="movie">
             <%- include("includes/master", {movie: movie}); %>
-            <% }); %>
+            <%- include("includes/detail", {movie: movie}); %>
         </div>
     </div>
     <% include includes/scripts %>
