@@ -7,8 +7,8 @@
     <div class="container">
         <%- include includes/search-bar %>
         <div id="movie">
-            <%- include("includes/master", {movie: movie}); %>
-            <%- include("includes/detail", {movie: movie}); %>
+            <%- include("includes/master", {movie: movie, isEditOn: isEditOn}); %>
+            <%- include("includes/detail", {movie: movie, isEditOn: isEditOn}); %>
         </div>
     </div>
     <% include includes/scripts %>

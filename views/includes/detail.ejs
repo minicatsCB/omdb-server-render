@@ -1,67 +1,69 @@
-<div class="movie-details col-lg-9">
-    <div>
-        <div class="row">
-            <div class="col-lg-3 col-md-4 intro-section">
-                <div class="info-item">
-                    <span><b>Language</b></span>
-                    <textarea type="text" class="form-control-plaintext" rows="2" itemprop="Language" disabled="true"><%= movie.value.Language %></textarea>
+<form id="edit-movie-form" method="POST" action="/movie/<%= movie.key %>/update">
+    <div class="movie-details col-lg-9">
+        <div>
+            <div class="row">
+                <div class="col-lg-3 col-md-4 intro-section">
+                    <div class="info-item">
+                        <span><b>Language</b></span>
+                        <textarea type="text" class="form-control-plaintext" rows="2" name="Language" <%- isEditOn===false ? 'disabled' : "" %>><%= movie.value.Language %></textarea>
+                    </div>
+
+                    <div class="info-item">
+                        <span><b>Director</b></span>
+                        <textarea type="text" class="form-control-plaintext" rows="3" name="Director" <%- isEditOn===false ? 'disabled' : "" %>><%= movie.value.Director %></textarea>
+                    </div>
+
+                    <div class="info-item">
+                        <span><b>Country</b></span>
+                        <textarea type="text" class="form-control-plaintext" rows="1" name="Country" <%- isEditOn===false ? 'disabled' : "" %>><%= movie.value.Country %></textarea>
+                    </div>
+
+                    <div class="info-item">
+                        <span><b>Released</b></span>
+                        <textarea type="text" class="form-control-plaintext" rows="1" name="Released" <%- isEditOn===false ? 'disabled' : "" %>><%= movie.value.Released %></textarea>
+                    </div>
+
+                    <div class="info-item">
+                        <span><b>Genres</b></span>
+                        <textarea type="text" class="form-control-plaintext" rows="3" name="Genre" <%- isEditOn===false ? 'disabled' : "" %>><%= movie.value.Genre %></textarea>
+                    </div>
+
+                    <div class="info-item">
+                        <span><b>Runtime</b></span>
+                        <textarea type="text" class="form-control-plaintext" rows="1" name="Runtime" <%- isEditOn===false ? 'disabled' : "" %>><%= movie.value.Runtime %></textarea>
+                    </div>
+
+                    <div class="info-item">
+                        <span><b>Rated</b></span>
+                        <textarea type="text" class="form-control-plaintext" rows="1" name="Rated" <%- isEditOn===false ? 'disabled' : "" %>><%= movie.value.Rated %></textarea>
+                    </div>
                 </div>
 
-                <div class="info-item">
-                    <span><b>Director</b></span>
-                    <textarea type="text" class="form-control-plaintext" rows="3" itemprop="Director" disabled="true"><%= movie.value.Director %></textarea>
+                <div class="col-lg-6 col-md-8 plot-section">
+                    <div class="info-item">
+                        <span><b>Plot summary</b></span>
+                        <textarea type="text" class="form-control-plaintext" rows="7" name="Plot" <%- isEditOn===false ? 'disabled' : "" %>><%= movie.value.Plot %></textarea>
+                    </div>
+                    <div class="info-item">
+                        <span><b>Cast</b></span>
+                        <textarea type="text" class="form-control-plaintext" rows="3" name="Actors" <%- isEditOn===false ? 'disabled' : "" %>><%= movie.value.Actors %></textarea>
+                    </div>
                 </div>
 
-                <div class="info-item">
-                    <span><b>Country</b></span>
-                    <textarea type="text" class="form-control-plaintext" rows="1" itemprop="Country" disabled="true"><%= movie.value.Country %></textarea>
-                </div>
+                <div class="col-lg-3 col-md-12 extras-section">
+                    <div class="info-item">
+                        <i class="fas fa-award"></i>
+                        <span><b>Awards</b></span>
+                        <textarea type="text" class="form-control-plaintext" rows="3" name="Awards" <%- isEditOn===false ? 'disabled' : "" %>><%= movie.value.Awards %></textarea>
+                    </div>
 
-                <div class="info-item">
-                    <span><b>Released</b></span>
-                    <textarea type="text" class="form-control-plaintext" rows="1" itemprop="Released" disabled="true"><%= movie.value.Released %></textarea>
-                </div>
-
-                <div class="info-item">
-                    <span><b>Genres</b></span>
-                    <textarea type="text" class="form-control-plaintext" rows="3" itemprop="Genre" disabled="true"><%= movie.value.Genre %></textarea>
-                </div>
-
-                <div class="info-item">
-                    <span><b>Runtime</b></span>
-                    <textarea type="text" class="form-control-plaintext" rows="1" itemprop="Runtime" disabled="true"><%= movie.value.Runtime %></textarea>
-                </div>
-
-                <div class="info-item">
-                    <span><b>Rated</b></span>
-                    <textarea type="text" class="form-control-plaintext" rows="1" itemprop="Rated" disabled="true"><%= movie.value.Rated %></textarea>
-                </div>
-            </div>
-
-            <div class="col-lg-6 col-md-8 plot-section">
-                <div class="info-item">
-                    <span><b>Plot summary</b></span>
-                    <textarea type="text" class="form-control-plaintext" rows="7" itemprop="Plot" disabled="true"><%= movie.value.Plot %></textarea>
-                </div>
-                <div class="info-item">
-                    <span><b>Cast</b></span>
-                    <textarea type="text" class="form-control-plaintext" rows="3" itemprop="Actors" disabled="true"><%= movie.value.Actors %></textarea>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-12 extras-section">
-                <div class="info-item">
-                    <i class="fas fa-award"></i>
-                    <span><b>Awards</b></span>
-                    <textarea type="text" class="form-control-plaintext" rows="3" itemprop="Awards" disabled="true"><%= movie.value.Awards %></textarea>
-                </div>
-
-                <div class="info-item">
-                    <i class="fas fa-star"></i>
-                    <span><b>Rating</b></span>
-                    <textarea type="text" class="form-control-plaintext" rows="1" itemprop="imdbRating" disabled="true"><%= movie.value.imdbRating %></textarea>
+                    <div class="info-item">
+                        <i class="fas fa-star"></i>
+                        <span><b>Rating</b></span>
+                        <textarea type="text" class="form-control-plaintext" rows="1" name="imdbRating" <%- isEditOn===false ? 'disabled' : "" %>><%= movie.value.imdbRating %></textarea>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</form>

@@ -15,12 +15,23 @@
                     </button>
                 </div>
 
-                <div class="my-1">
-                    <button class="btn btn-light w-100" type="button" itemprop="edit">
-                        <i class="fas fa-edit"></i>
-                        <span>Edit</span>
-                    </button>
-                </div>
+                <% if(isEditOn === false){ %>
+                    <div class="my-1">
+                        <button class="btn btn-light w-100" type="button" itemprop="edit">
+                            <i class="fas fa-edit"></i>
+                            <a href="/movie/<%= movie.key %>/edit">Edit</a>
+                        </button>
+                    </div>
+                <% } else{ %>
+                    <div class="my-1">
+                        <button class="btn btn-light w-100" type="submit" form="edit-movie-form">
+                            <i class="fas fa-edit"></i>
+                            <span>Save</span>
+                        </button>
+                    </div>
+                <% } %>
+
+
 
                 <div class="my-1">
                     <button class="btn btn-light w-100" type="button" itemprop="delete">

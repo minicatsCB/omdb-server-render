@@ -13,6 +13,9 @@ admin.initializeApp({
 app.set("view engine", "ejs");
 
 app.use(express.static("public"));
+app.use(express.urlencoded({
+    extended: false
+}));
 
 app.get("/", (req, res) => {
     controller.getAllMovies().then(allMovies => {
@@ -34,13 +37,25 @@ app.get("/create", (req, res) => {
 
 app.get("/movie/:id", (req, res) => {
     controller.getMovieById(req.params.id).then(movie => {
-        res.render("movie", { movie: movie });
+        res.render("movie", { movie: movie, isEditOn: false });
     });
 });
 
 app.get("/movie/:id/delete", (req, res) => {
     controller.deleteMovie(req.params.id).then(movie => {
         res.redirect("/");
+    });
+});
+
+app.get("/movie/:id/edit", (req, res) => {
+    controller.getMovieById(req.params.id).then(movie => {
+        res.render("movie", { movie: movie, isEditOn: true });
+    });
+});
+
+app.post("/movie/:id/update", (req, res) => {
+    controller.updateMovie(req.params.id, req.body).then(movie => {
+        res.redirect("/movie/" + req.params.id);
     });
 });
 
