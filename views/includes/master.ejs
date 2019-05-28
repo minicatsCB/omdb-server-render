@@ -31,12 +31,14 @@
                     </div>
                 <% } %>
 
-                <div class="my-1">
-                    <button class="btn btn-light w-100" type="button" itemprop="delete">
-                        <i class="fas fa-trash-alt"></i>
-                        <a href="/movie/<%= movie.key %>/delete">Delete</a>
-                    </button>
-                </div>
+                <form id="search-movie-form" method="POST" action="/movie/<%= movie.key %>/delete">
+                    <div class="my-1">
+                        <button class="btn btn-light w-100" type="submit" itemprop="delete">
+                            <i class="fas fa-trash-alt"></i>
+                            <span>Delete</span>
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

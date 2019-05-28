@@ -41,7 +41,7 @@ app.get("/movie/:id", (req, res) => {
     });
 });
 
-app.get("/movie/:id/delete", (req, res) => {
+app.post("/movie/:id/delete", (req, res) => {
     controller.deleteMovie(req.params.id).then(movie => {
         res.redirect("/");
     });
