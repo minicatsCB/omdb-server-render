@@ -9,7 +9,7 @@
             </div>
             <div class="movie-options col-lg-12" data-key="<%= movie.key %>">
                 <div class="my-1">
-                    <button class="btn btn-light w-100" type="button" itemprop="details">
+                    <button class="btn btn-light w-100" type="button">
                         <i class="fas fa-info-circle"></i>
                         <a href="/movie/<%= movie.key %>">View details</a>
                     </button>
@@ -17,7 +17,7 @@
 
                 <% if(isEditOn === false){ %>
                     <div class="my-1">
-                        <button class="btn btn-light w-100" type="button" itemprop="edit">
+                        <button class="btn btn-light w-100" type="button">
                             <i class="fas fa-edit"></i>
                             <a href="/movie/<%= movie.key %>/edit">Edit</a>
                         </button>
@@ -33,7 +33,7 @@
 
                 <form id="search-movie-form" method="POST" action="/movie/<%= movie.key %>/delete">
                     <div class="my-1">
-                        <button class="btn btn-light w-100" type="submit" itemprop="delete">
+                        <button class="btn btn-light w-100" type="submit">
                             <i class="fas fa-trash-alt"></i>
                             <span>Delete</span>
                         </button>
