@@ -4,8 +4,8 @@
 <%- include includes/head %>
 
 <body>
-    <div class="container">
-        <%- include includes/search-bar %>
+    <%- include includes/search-bar %>
+    <div class="mx-3">
         <div id="movie">
             <%- include("includes/master", {movie: movie, isEditOn: isEditOn}); %>
             <%- include("includes/detail", {movie: movie, isEditOn: isEditOn}); %>
