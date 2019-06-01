@@ -4,8 +4,8 @@
 <%- include includes/head %>
 
 <body>
+    <%- include includes/search-bar %>
     <div class="container">
-        <%- include includes/search-bar %>
         <div id="movies">
             <% movies.forEach(function(movie){ %>
             <%- include("includes/master", { movie: movie, isEditOn: false }); %>
