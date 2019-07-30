@@ -20,7 +20,7 @@
     "ejs": "2.6.1",
     "express": "4.16.4",
     "firebase-admin": "7.3.0",
-    "lodash": "4.17.11"
+    "lodash": "4.17.13"
   },
   "devDependencies": {
     "nodemon": "1.19.0"
